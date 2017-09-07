@@ -1,0 +1,19 @@
+{
+  "name": "react-cdp-2017-abychyk",
+  "version": "1.0.0",
+  "description": "EPAM CDP React mentoring program -- homework -- Aliaksei Bychyk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/Aliaksei_Bychyk/react-cdp-2017-abychyk"
+  },
+  "keywords": [
+    "epam",
+    "react"
+  ],
+  "author": "Aliaksei Bychyk",
+  "license": "ISC"
+}
