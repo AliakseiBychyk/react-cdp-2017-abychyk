@@ -5,7 +5,7 @@ const path = require('path')
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, '/public'),
+    path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
   },
 
@@ -40,8 +40,8 @@ module.exports = {
       {
         test: /\.css$/,
         loaders: [
-          'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
       ]
       },
       {
