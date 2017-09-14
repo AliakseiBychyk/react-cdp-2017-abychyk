@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 import SearchHeader from '../SearchHeader/SearchHeader'
 import MovieList from '../MovieList/MovieList'
 import MovieItem from '../MovieItem/MovieItem'
@@ -47,15 +49,17 @@ class App extends Component {
   }
 
   headerContent = () => {
-    // if (this.state.currentMovieId) {
     if (this.props.location.pathname === '/movie') {
-      let currentMovie = this.state.movies[this.state.currentMovieId - 1]
+      let currentMovie = this.state.currentMovieId && this.state.movies[this.state.currentMovieId - 1]
       console.log(this.state.currentMovieId)
-      return (
-        <MovieItem
-          clickBackToSearch={this.setMovie}
-          {...currentMovie}
-        />
+      return ( this.state.currentMovieId
+                ? <MovieItem
+                    clickBackToSearch={this.setMovie}
+                    {...currentMovie}
+                  />
+                : <Link to='/'>
+                    <Button bsStyle='primary'>TO SEARCH</Button>
+                  </Link>
       )
     }
     return (

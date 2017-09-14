@@ -8,7 +8,7 @@ const server = express()
 
 server.set('view engine', 'ejs')
 
-server.get('/', (req, res) => {
+server.get(['/', '/movie'], (req, res) => {
   res.render('index', {
     content: 'React CDP 2017 homework'
   })
