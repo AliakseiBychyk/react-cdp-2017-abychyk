@@ -1,9 +1,15 @@
 .movieItem {
-
+  text-align: left;
+  display: block;
+  height: 400px;
+  padding: 30px;
+  margin: auto;
+  background-color: slategray;
 }
 
 .backToSearchButton {
-
+  display: inline-block;
+  float: right;
 }
 
 .details {
@@ -11,11 +17,17 @@
 }
 
 .img {
-
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  height: 300px;
 }
 
 .text {
-
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  width: 50%;
 }
 
 .summary {
@@ -27,5 +39,5 @@
 }
 
 .cast {
-  
+
 }

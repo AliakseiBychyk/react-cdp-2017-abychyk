@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import App from './components/App/App'
 
 render( 
-  // <App />,
   <Router>
     <Switch>  
       <Route exact path="/" component={App} />

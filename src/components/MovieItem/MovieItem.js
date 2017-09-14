@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import styles from './MovieItem.css'
 
@@ -13,7 +14,9 @@ class MovieItem extends Component {
     return (
       <div className={styles.movieItem}>
         <div className={styles.backToSearchButton}>
-          <Button onClick={this.clickBackToSearch}>SEARCH</Button>  
+          <Link to='/'>  
+            <Button onClick={this.clickBackToSearch}>SEARCH</Button> 
+          </Link>  
         </div>
         <div className={styles.details}>
           <img

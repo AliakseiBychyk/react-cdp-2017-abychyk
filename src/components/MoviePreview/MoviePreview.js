@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import styles from './MoviePreview.css'
 
 class MoviePreview extends Component {
@@ -23,10 +24,12 @@ class MoviePreview extends Component {
         className={styles.moviePreview}
         onClick={this.handleClick}
       >
-        <img
-          src={this.props.poster}
-          alt={this.props.show_title}
-          className={styles.img} />
+        <Link to='/movie'>  
+          <img
+            src={this.props.poster}
+            alt={this.props.show_title}
+            className={styles.img} />
+        </Link>
       </div>
     )
   }

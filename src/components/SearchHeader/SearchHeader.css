@@ -1,11 +1,19 @@
 .searchHeader {
-
+  text-align: left;
+  display: block;
+  height: 200px;
+  padding: 30px;
+  margin: auto;
+  background-color: slategray;
 }
 
 .searchByButtons {
-
+  display: inline-block;
+  padding: 15px;
 }
 
 .searchButton {
-  
+  float: auto;
+  position: relative;
+  left: 20%;
 }
