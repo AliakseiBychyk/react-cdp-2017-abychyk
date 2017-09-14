@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import SearchHeader from '../SearchHeader/SearchHeader'
@@ -88,7 +87,4 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-
-}
 export default App
