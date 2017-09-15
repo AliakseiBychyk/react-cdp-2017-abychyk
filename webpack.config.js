@@ -10,19 +10,19 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: false,
-      }
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.optimize\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: true,
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false,
+    //     drop_console: false,
+    //   }
+    // }),
+    // new webpack.HotModuleReplacementPlugin(),
+    // new OptimizeCssAssetsPlugin({
+    //   assetNameRegExp: /\.optimize\.css$/g,
+    //   cssProcessor: require('cssnano'),
+    //   cssProcessorOptions: { discardComments: { removeAll: true } },
+    //   canPrint: true,
+    // }),
   ],
 
   module: {

@@ -20,7 +20,8 @@ class SearchHeader extends Component {
   render() {
     return (
       <div className={styles.searchHeader}>
-        <Form>
+        
+        <Form>          
           <ControlLabel>FIND YOUR MOVIE</ControlLabel>
           <FormControl
             type="text"
@@ -40,7 +41,8 @@ class SearchHeader extends Component {
               bsStyle={(this.props.criterion === 'director') ? 'primary' : 'default'}
             >DIRECTOR</Button>          
 
-            <Button className={styles.searchButton}
+            <Button
+              className={styles.searchButton}
               onClick={this.props.onSearchButtonClick}
             >SEARCH</Button>
             

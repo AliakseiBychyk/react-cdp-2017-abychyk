@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import SearchHeader from '../SearchHeader/SearchHeader'
 import MovieList from '../MovieList/MovieList'
@@ -47,36 +47,29 @@ class App extends Component {
     })
   }
 
-  headerContent = () => {
-    if (this.props.location.pathname === '/movie') {
-      let currentMovie = this.state.currentMovieId && this.state.movies[this.state.currentMovieId - 1]
-      console.log(this.state.currentMovieId)
-      return ( this.state.currentMovieId
-                ? <MovieItem
-                    clickBackToSearch={this.setMovie}
-                    {...currentMovie}
-                  />
-                : <Link to='/'>
-                    <Button bsStyle='primary'>TO SEARCH</Button>
-                  </Link>
-      )
-    }
-    return (
-      <SearchHeader
-        onSearchButtonClick={this.fetchMovies}
-        onCriterionButtonClick={this.updateSearchCriterion}
-        onInputValue={this.onInputValue}
-        criterion={this.state.searchCriterion}
-
-      />
-    )
-  }
-
   render() {
     return (
       <div className={styles.app}>
+        <Route exact path="/" render={() => (
+          <SearchHeader
+            onSearchButtonClick={this.fetchMovies}
+            onCriterionButtonClick={this.updateSearchCriterion}
+            onInputValue={this.onInputValue}
+            criterion={this.state.searchCriterion}
+          />
+        )} />
         
-        {this.headerContent()}
+        <Route path="/movie" render={() => (
+          this.state.currentMovieId
+          ? <MovieItem
+              clickBackToSearch={this.setMovie}
+              {...this.state.movies[this.state.currentMovieId - 1]}
+            />
+          : <Link to='/'>
+              <Button bsStyle='primary'>TO SEARCH</Button>
+            </Link>
+
+        )} />
         
         <MovieList
           movies={this.state.movies}
