@@ -26,7 +26,7 @@ class MovieItem extends Component {
           />
           <div className={styles.text}>
             <div>
-              <p3>{this.props.show_title}</p3>
+              <p3 className={styles.title}>{this.props.show_title}</p3>
               <div>{this.props.rating}</div>
             </div>
             <div>

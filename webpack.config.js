@@ -49,5 +49,9 @@ module.exports = {
         loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
       }
     ]
+  },
+  devtool: 'cheap-module-eval-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'public')
   }
 }
