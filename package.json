@@ -19,6 +19,7 @@
   "author": "Aliaksei Bychyk",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "jest": "^21.0.1",

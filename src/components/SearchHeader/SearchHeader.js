@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 import styles from './SearchHeader.css'
 
 class SearchHeader extends Component {
+  state = {
+    searchQuery: ''
+  }
 
   setSearchByTitle = () => {
     this.props.onCriterionButtonClick('title')
@@ -14,7 +18,9 @@ class SearchHeader extends Component {
   }
 
   setInputValue = (event) => {
+    const searchQuery = encodeURIComponent(event.target.value.trim())
     this.props.onInputValue(event.target.value)
+    this.setState({ searchQuery })
   }
 
   render() {
@@ -44,7 +50,9 @@ class SearchHeader extends Component {
             <Button
               className={styles.searchButton}
               onClick={this.props.onSearchButtonClick}
-            >SEARCH</Button>
+            >
+              <NavLink to={`/search/${this.state.searchQuery}`}>SEARCH</NavLink>
+            </Button>
             
           </div>
         </Form>
@@ -53,11 +61,11 @@ class SearchHeader extends Component {
   }  
 }
 
-SearchHeader.propTypes = {
-  onSearchButtonClick: PropTypes.func.isRequired,
-  onCriterionButtonClick: PropTypes.func,
-  onInputValue: PropTypes.func.isRequired,
-  criterion: PropTypes.string.isRequired
-}
+// SearchHeader.propTypes = {
+//   onSearchButtonClick: PropTypes.func.isRequired,
+//   onCriterionButtonClick: PropTypes.func,
+//   onInputValue: PropTypes.func.isRequired,
+//   criterion: PropTypes.string.isRequired
+// }
 
 export default SearchHeader

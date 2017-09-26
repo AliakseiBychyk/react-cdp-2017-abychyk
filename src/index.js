@@ -1,14 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import App from './components/App/App'
+import { Provider } from 'react-redux'
+import configureStore from './store/configureStore'
+import AppRouter from './routes/AppRouter'
 
-render( 
-  <Router>
-    <Switch>  
-      <Route exact path="/" component={App} />
-      <Route path="/movie" component={App} />
-    </Switch>  
-  </Router>,
-  document.getElementById('root')
+const store = configureStore()
+
+const jsx = (
+  <Provider store={store}>
+    <AppRouter />  
+  </Provider>  
 )
+
+render(jsx, document.getElementById('root'))
