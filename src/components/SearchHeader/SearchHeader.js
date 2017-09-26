@@ -1,26 +1,28 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
+import { setSearchCriterion, setSearchQuery } from '../../actions/query'
+import { fetchMovies } from '../../actions/movies'
 import styles from './SearchHeader.css'
 
 class SearchHeader extends Component {
-  state = {
-    searchQuery: ''
-  }
 
   setSearchByTitle = () => {
-    this.props.onCriterionButtonClick('title')
+    this.props.dispatch(setSearchCriterion('title'))
   }
 
   setSearchByDirector = () => {
-    this.props.onCriterionButtonClick('director')
+    this.props.dispatch(setSearchCriterion('director'))
   }
 
   setInputValue = (event) => {
-    const searchQuery = encodeURIComponent(event.target.value.trim())
-    this.props.onInputValue(event.target.value)
-    this.setState({ searchQuery })
+    this.props.dispatch(setSearchQuery(encodeURIComponent(event.target.value.trim())))
+  }
+
+  onSearchButtonClick = () => {
+    this.props.dispatch(fetchMovies(this.props.criterion, this.props.query))
   }
 
   render() {
@@ -49,9 +51,9 @@ class SearchHeader extends Component {
 
             <Button
               className={styles.searchButton}
-              onClick={this.props.onSearchButtonClick}
+              onClick={this.onSearchButtonClick}
             >
-              <NavLink to={`/search/${this.state.searchQuery}`}>SEARCH</NavLink>
+              <Link to={`/search/${this.props.query}`}>SEARCH</Link>
             </Button>
             
           </div>
@@ -61,11 +63,11 @@ class SearchHeader extends Component {
   }  
 }
 
-// SearchHeader.propTypes = {
-//   onSearchButtonClick: PropTypes.func.isRequired,
-//   onCriterionButtonClick: PropTypes.func,
-//   onInputValue: PropTypes.func.isRequired,
-//   criterion: PropTypes.string.isRequired
-// }
+const mapStateToProps = (state) => {
+  return {
+    criterion: state.query.searchCriterion,
+    query: state.query.searchQuery
+  }
+}
 
-export default SearchHeader
+export default connect(mapStateToProps)(SearchHeader)

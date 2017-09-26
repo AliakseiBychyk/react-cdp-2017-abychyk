@@ -10,7 +10,7 @@ const AppRouter = () => (
     <Switch>  
       <Route exact path="/" component={HomePage} />
       <Route path="/search/:searchQuery" component={SearchResultPage} />
-      <Route path="/film/:movieName" component={MovieDetailPage} />
+      <Route path="/film/:show_title" component={MovieDetailPage} />
       <Route component={NotFoundPage} />
     </Switch>  
   </Router>

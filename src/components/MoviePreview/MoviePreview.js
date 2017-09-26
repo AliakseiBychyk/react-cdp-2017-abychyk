@@ -24,7 +24,7 @@ class MoviePreview extends Component {
         className={styles.moviePreview}
         onClick={this.handleClick}
       >
-        <Link to='/movie'>  
+        <Link to={`/movie/${this.props.show_title}`}>  
           <img
             src={this.props.poster}
             alt={this.props.show_title}
@@ -33,17 +33,6 @@ class MoviePreview extends Component {
       </div>
     )
   }
-}
-
-MoviePreview.propTypes = {
-  id: PropTypes.number,
-  unit: PropTypes.number,
-  show_title: PropTypes.string,
-  director: PropTypes.string,
-  poster: PropTypes.string,
-  errorcode: PropTypes.number,
-  message: PropTypes.string,
-  onClick: PropTypes.func
 }
 
 export default MoviePreview
