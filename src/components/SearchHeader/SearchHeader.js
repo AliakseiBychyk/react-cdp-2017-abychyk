@@ -23,6 +23,7 @@ class SearchHeader extends Component {
 
   onSearchButtonClick = () => {
     this.props.dispatch(fetchMovies(this.props.criterion, this.props.query))
+    // this.props.history.push(`/search/${this.props.query}`)
   }
 
   render() {

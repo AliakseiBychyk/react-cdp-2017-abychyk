@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SearchHeader from '../SearchHeader/SearchHeader'
 import MovieList from '../MovieList/MovieList'
 import styles from './SearchResultPage.css'

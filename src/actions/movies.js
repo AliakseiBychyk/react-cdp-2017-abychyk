@@ -1,3 +1,5 @@
+export const RECEIVE_MOVIES = 'RECEIVE_MOVIES'
+
 const fetchMoviesJson = (criterion, query) => {
   const url = `https://netflixroulette.net/api/api.php?${criterion}=${query}`
   console.log('url: ', url)
@@ -9,7 +11,7 @@ const fetchMoviesJson = (criterion, query) => {
 }
 
 const receiveMovies = (movies) => ({
-  type: 'RECEIVE_MOVIES',
+  type: RECEIVE_MOVIES,
   movies  
 })
 
