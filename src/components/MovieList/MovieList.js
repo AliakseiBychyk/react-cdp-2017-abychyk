@@ -1,25 +1,25 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import React, {Component} from 'react'
 import MoviePreview from '../MoviePreview/MoviePreview'
 import styles from './MovieList.css'
 
-const MovieList = ({movies, onMovieClick}) => (
-  <div className={styles.movieList}>
-    {movies.map((movie, index) =>
-      <MoviePreview
-        key={index}
-        onClick={onMovieClick}
-        {...movie}
-      />
-    )}
-  </div>
-)
+class MovieList extends Component {
+  state = {
+    movies: this.props.movies
+  }
 
-const mapStateToProps = (state) => {
-  return {
-    movies: state.movies
+  render() {
+    return (
+      <div className={styles.movieList}>
+      {this.props.movies.map((movie, index) =>
+        <MoviePreview
+          key={index}
+          onClick={this.props.onMovieClick}
+          {...movie}
+        />
+      )}
+    </div>
+    )
   }
 }
 
-export default connect(mapStateToProps)(MovieList)
+export default MovieList

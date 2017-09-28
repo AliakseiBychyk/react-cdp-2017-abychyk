@@ -2,7 +2,7 @@ import { SET_SEARCH_CRITERION, SET_SEARCH_QUERY } from '../actions/query'
 
 const queryReducerDefaultState = {
   searchCriterion: 'director',
-  query: ''
+  searchQuery: ''
 }
 
 export default (state = queryReducerDefaultState, action) => {
