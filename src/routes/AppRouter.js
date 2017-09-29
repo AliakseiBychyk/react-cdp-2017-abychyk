@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import HomePage from '../components/HomePage/HomePage'
-import SearchResultPage from '../components/SearchResultPage/SearchResultPage'
-import MovieDetailPage from '../components/MovieDetailPage/MovieDetailPage'
+import SearchResultPage from '../components/SearchResultPage/SearchResultPageContainer'
+import MovieDetailPage from '../components/MovieDetailPage/MovieDetailPageContainer'
 import NotFoundPage from '../components/NotFoundPage/NotFoundPage'
 
 const AppRouter = () => (

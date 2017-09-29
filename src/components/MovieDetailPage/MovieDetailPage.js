@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchMovies } from '../../actions/movies'
 import MovieItem from '../MovieItem/MovieItem'
 import MovieList from '../MovieList/MovieList'
 import styles from './MovieDetailPage.css'
@@ -26,14 +24,4 @@ class MovieDetailPage extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => {
-  return {
-    movies: state.movies,
-    movie: state.movies.find((movie) => 
-      movie.show_title === props.match.params.show_title
-    ),
-    title: props.match.params.show_title,
-  }
-}
-
-export default connect(mapStateToProps, { fetchMovies })(MovieDetailPage)
+export default MovieDetailPage
