@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { setSearchCriterion, setSearchQuery } from '../../actions/query'
 import { fetchMovies } from '../../actions/movies'
 import SearchHeader from '../SearchHeader/SearchHeader'
 import MovieList from '../MovieList/MovieList'
 import styles from './SearchResultPage.css'
+
 
 class SearchResultPage extends Component {
   componentWillMount() {
@@ -11,8 +13,8 @@ class SearchResultPage extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.searchQuery !== this.props.query) {
-      this.props.fetchMovies( this.props.criterion, this.props.query)
+    if (prevProps.query !== this.props.query) {
+      this.props.fetchMovies( this.props.criterion, this.props.query )
     }
   }
 
