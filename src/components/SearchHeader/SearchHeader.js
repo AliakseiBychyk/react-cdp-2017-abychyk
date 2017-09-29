@@ -44,7 +44,6 @@ class SearchHeader extends Component {
               bsStyle={(this.state.criterion === 'director') ? 'primary' : 'default'}
             >DIRECTOR</Button>          
 
-            
             <Link
               to={{
                 pathname: `/search/${this.state.query}`,
@@ -54,8 +53,7 @@ class SearchHeader extends Component {
                 SEARCH
               </Button>
             </Link>
-            
-            
+                   
           </div>
         </Form>
       </div>

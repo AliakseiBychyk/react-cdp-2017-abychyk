@@ -6,32 +6,10 @@ import MovieList from '../MovieList/MovieList'
 import styles from './MovieDetailPage.css'
 
 class MovieDetailPage extends Component {
-  state = {
-    show_title: this.props.match.params.show_title,
-    query: encodeURIComponent(this.props.match.params.show_title)
-  }
-
   componentWillMount() {
-    console.log(this.state.show_title)
-    console.log(this.props.movies)
     if (this.props.movies.length === 0) {
-      this.props.dispatch(fetchMovies('title', encodeURIComponent(this.props.title)))
-    }
-    console.log(this.props.movies)
-    
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.show_title !== this.props.title) {
-      this.setState({ show_title: this.props.title })
-      console.log('update', this.state.show_title)
-    }
-  }
-
-  getMovie = () => {
-    return this.props.movies.find((movie) => 
-      movie.show_title === this.state.show_title
-    )
+      this.props.fetchMovies('title', encodeURIComponent(this.props.title))
+    }   
   }
 
   render() {
@@ -58,4 +36,4 @@ const mapStateToProps = (state, props) => {
   }
 }
 
-export default connect(mapStateToProps)(MovieDetailPage)
+export default connect(mapStateToProps, { fetchMovies })(MovieDetailPage)
