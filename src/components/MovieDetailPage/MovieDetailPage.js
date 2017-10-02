@@ -13,11 +13,9 @@ class MovieDetailPage extends Component {
   render() {
     return (
       <div className={styles.detail}>
-        {this.props.movie
-          ? <MovieItem
-              movie={this.props.movie}
-            />
-          : null}
+        <MovieItem
+          movie={this.props.movie}
+        />
         <MovieList
           movies={this.props.movies}
         />
