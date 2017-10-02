@@ -1,3 +1,4 @@
+import 'whatwg-fetch'
 export const RECEIVE_MOVIES = 'RECEIVE_MOVIES'
 
 const fetchMoviesJson = (criterion, query) => {
@@ -15,5 +16,5 @@ const receiveMovies = (movies) => ({
   movies  
 })
 
-export const fetchMovies = (criterion, query) => dispatch => fetchMoviesJson(criterion, query)
+export const fetchMovies = (criterion = 'title', query) => dispatch => fetchMoviesJson(criterion, query)
   .then(movies => dispatch(receiveMovies(movies)))
