@@ -6,7 +6,8 @@ import styles from './SearchHeader.css'
 class SearchHeader extends Component {
   state = {
     criterion: 'director',
-    query: ''
+    query: '',
+    fireRedirect: false
   }
 
   setCriterion = () => {
@@ -20,42 +21,52 @@ class SearchHeader extends Component {
     this.setState({ query: encodeURIComponent(event.target.value.trim()) })
   }
 
+  submitForm = (e) => {
+    e.preventDefault()
+    this.setState({ fireRedirect: true })
+  }
+
   render() {
+    const { fireRedirect } = this.state
+    
     return (
       <div className={styles.searchHeader}>
-        
-        <Form>          
-          <ControlLabel>FIND YOUR MOVIE</ControlLabel>
-          <FormControl
-            type="text"
-            placeholder="Quentin Tarantino"
-            onChange={this.setInputValue}
-          />
-          <div className={styles.searchByButtons}>
-            <ControlLabel>SEARCH BY</ControlLabel>
-            
-            <Button
-              onClick={this.setCriterion}
-              bsStyle={(this.state.criterion === 'title') ? 'primary' : 'default'}
-            >TITLE</Button>
-            
-            <Button
-              onClick={this.setCriterion}
-              bsStyle={(this.state.criterion === 'director') ? 'primary' : 'default'}
-            >DIRECTOR</Button>          
-
-            <Link
-              to={{
-                pathname: `/search/${this.state.query}`,
-                search: `?criterion=${this.state.criterion}`
-              }}
-            ><Button className={styles.searchButton}>
-                SEARCH
+        <Form onSubmit={this.submitForm} >       
+            <ControlLabel>FIND YOUR MOVIE</ControlLabel>
+            <FormControl
+              type="text"
+              placeholder="Quentin Tarantino"
+              onChange={this.setInputValue}
+            />
+            <div className={styles.searchByButtons}>
+              <ControlLabel>SEARCH BY</ControlLabel>
+              
+              <Button
+                onClick={this.setCriterion}
+                bsStyle={(this.state.criterion === 'title') ? 'primary' : 'default'}
+              >TITLE</Button>
+              
+              <Button
+                onClick={this.setCriterion}
+                bsStyle={(this.state.criterion === 'director') ? 'primary' : 'default'}
+              >DIRECTOR</Button>          
+                
+              <Button
+                type="submit"
+                className={styles.searchButton}
+              >
+                  SEARCH
               </Button>
-            </Link>
-                   
-          </div>
-        </Form>
+            </div>
+        </Form>  
+        {fireRedirect && (
+          <Redirect
+            to={{
+              pathname: `/search/${this.state.query}`,
+              search: `?criterion=${this.state.criterion}`
+            }}
+          />
+        )}
       </div>
     )
   }  
