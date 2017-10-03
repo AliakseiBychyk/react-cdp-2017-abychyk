@@ -54,9 +54,7 @@ class SearchHeader extends Component {
               <Button
                 type="submit"
                 className={styles.searchButton}
-              >
-                  SEARCH
-              </Button>
+              >SEARCH</Button>
             </div>
         </Form>  
         {fireRedirect && (

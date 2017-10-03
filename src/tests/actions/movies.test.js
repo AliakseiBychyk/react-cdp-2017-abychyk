@@ -1,5 +1,5 @@
 import { fetchMovies } from '../../actions/movies'
-import testingQuery from './testingMovieQuery.json'
+import testingQuery from '../fixtures/testingMovieQuery.json'
 
 test('should setup receive movies action object', (done) => {
   const dispatch = jest.fn()
