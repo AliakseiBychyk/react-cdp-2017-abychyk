@@ -1,10 +1,10 @@
 # HOMEWORK React mentoring -- Aliaksei Bychyk #
 
 
-### server listening on ### http://localhost:8060
+### server listening on http://localhost:8060 ###
 
 
-### insert to ### `.bash-profile` :
+### insert to `.bash-profile` : ###
 ```bash
 export PATH=$PATH: ./node_modules/.bin
 ```
@@ -13,7 +13,7 @@ export PATH=$PATH: ./node_modules/.bin
  ```bash
  npm start
  ```
-### or ###
+or
 ```bash
 yarn start
 ```
@@ -22,7 +22,7 @@ yarn start
 ```bash 
 npm run dev
 ```
-### or ###
+or
 ```bash
 yarn run dev
 ```
@@ -31,7 +31,7 @@ yarn run dev
 ```bash
 npm test -- --watch
 ```
-### or ###
+or
 ```bash
 yarn test -- --watch
 ```
