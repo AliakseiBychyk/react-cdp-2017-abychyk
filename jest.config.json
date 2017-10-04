@@ -8,5 +8,7 @@
   ],
   "moduleNameMapper": {
     "^.+\\.(css|scss)$": "identity-obj-proxy"
-  }
+  },
+  "collectCoverage": true,
+  "coverageFormats": ["json", "html"]
 }

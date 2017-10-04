@@ -1,0 +1,4 @@
+{
+  "errorcode": 400,
+  "message": "Sorry! Your input length must be greater than 5"
+}

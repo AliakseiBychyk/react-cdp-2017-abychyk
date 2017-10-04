@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render MovieItem correctly 1`] = `""`;
+
 exports[`should render MovieItem with movie 1`] = `
 <div
   className="movieItem"

@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render MoviePreview correctly 1`] = `
+<div
+  className="moviePreview"
+>
+  <Link
+    replace={false}
+    to="/movie/undefined"
+  >
+    <img
+      className="img"
+    />
+  </Link>
+</div>
+`;
+
+exports[`should render MoviePreview with errorcode 1`] = `
+<div
+  className="error"
+>
+  <div>
+    Error: 
+    400
+  </div>
+  Sorry! Your input length must be greater than 5
+  <div>
+    Try another search.
+  </div>
+</div>
+`;
+
 exports[`should render MoviePreview with movie 1`] = `
 <div
   className="moviePreview"
