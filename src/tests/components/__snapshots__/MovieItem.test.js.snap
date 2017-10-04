@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MovieItem with movie 1`] = `
+<div
+  className="movieItem"
+>
+  <div
+    className="backToSearchButton"
+  >
+    <Link
+      replace={false}
+      to="/"
+    >
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="default"
+        disabled={false}
+      >
+        SEARCH
+      </Button>
+    </Link>
+  </div>
+  <div
+    className="details"
+  >
+    <img
+      alt="Terminator 2: Judgment Day"
+      className="img"
+      src="http://netflixroulette.net/api/posters/60028202.jpg"
+    />
+    <div
+      className="text"
+    >
+      <div>
+        <p3
+          className="title"
+        >
+          Terminator 2: Judgment Day
+        </p3>
+        <div>
+          3.9
+        </div>
+      </div>
+      <div>
+        <div>
+          1991
+        </div>
+        <div>
+          137 min
+        </div>
+      </div>
+      <div
+        className="summary"
+      >
+        A reprogrammed Terminator arrives from the future to protect young John Connor from a relentless shape-shifting cyborg in this sequel to Terminator. On the run, John and his guardian seek John's mother, Sarah, who is locked away in an insane asylum.
+      </div>
+      <div
+        className="director"
+      >
+        Director: 
+        James Cameron
+      </div>
+      <div
+        className="cast"
+      >
+        Cast: 
+        Arnold Schwarzenegger, Linda Hamilton, Robert Patrick, Edward Furlong, Earl Boen, Joe Morton, S. Epatha Merkerson, Castulo Guerra, Danny Cooksey, Jenette Goldstein
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MoviePreview with movie 1`] = `
+<div
+  className="moviePreview"
+>
+  <Link
+    replace={false}
+    to="/movie/The Terminator"
+  >
+    <img
+      alt="The Terminator"
+      className="img"
+      src="http://netflixroulette.net/api/posters/1032625.jpg"
+    />
+  </Link>
+</div>
+`;
