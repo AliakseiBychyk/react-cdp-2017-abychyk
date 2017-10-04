@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SearchResultPage correctly 1`] = `
+<div
+  className="home"
+>
+  <SearchHeader />
+  <MovieList
+    movies={Array []}
+  />
+</div>
+`;
+
+exports[`should render SearchResultPage with movies data 1`] = `
+<div
+  className="home"
+>
+  <SearchHeader />
+  <MovieList
+    movies={
+      Array [
+        Object {
+          "category": "Dramas",
+          "director": "James Cameron",
+          "mediatype": 0,
+          "poster": "http://netflixroulette.net/api/posters/1181461.jpg",
+          "rating": "3.9",
+          "release_year": "1997",
+          "runtime": "194 min",
+          "show_cast": "Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates, Frances Fisher, Gloria Stuart, Bill Paxton, Bernard Hill, David Warner, Victor Garber",
+          "show_id": 1181461,
+          "show_title": "Titanic",
+          "summary": "This cinematic spectacle -- winner of 11 Oscars -- follows society girl Rose and penniless artist Jack as they fall in love just as tragedy strikes.",
+          "unit": 352,
+        },
+        Object {
+          "category": "Action & Adventure",
+          "director": "James Cameron",
+          "mediatype": 0,
+          "poster": "http://netflixroulette.net/api/posters/1032625.jpg",
+          "rating": "3.9",
+          "release_year": "1984",
+          "runtime": "107 min",
+          "show_cast": "Arnold Schwarzenegger, Michael Biehn, Linda Hamilton, Paul Winfield, Lance Henriksen, Rick Rossovich, Bess Motta, Earl Boen, Dick Miller, Shawn Schepps",
+          "show_id": 1032625,
+          "show_title": "The Terminator",
+          "summary": "In the post-apocalyptic future, tyrannical machines teleport a cyborg to 1984 to a kill a woman whose unborn son is destined to lead the human rebels.",
+          "unit": 380,
+        },
+        Object {
+          "category": "Action & Adventure",
+          "director": "James Cameron",
+          "mediatype": 0,
+          "poster": "http://netflixroulette.net/api/posters/60028202.jpg",
+          "rating": "3.9",
+          "release_year": "1991",
+          "runtime": "137 min",
+          "show_cast": "Arnold Schwarzenegger, Linda Hamilton, Robert Patrick, Edward Furlong, Earl Boen, Joe Morton, S. Epatha Merkerson, Castulo Guerra, Danny Cooksey, Jenette Goldstein",
+          "show_id": 60028202,
+          "show_title": "Terminator 2: Judgment Day",
+          "summary": "A reprogrammed Terminator arrives from the future to protect young John Connor from a relentless shape-shifting cyborg in this sequel to Terminator. On the run, John and his guardian seek John's mother, Sarah, who is locked away in an insane asylum.",
+          "unit": 1001,
+        },
+      ]
+    }
+  />
+</div>
+`;
