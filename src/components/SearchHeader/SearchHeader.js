@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 import styles from './SearchHeader.css'
 

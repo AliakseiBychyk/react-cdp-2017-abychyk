@@ -21,7 +21,12 @@ test('should change SerchResultPage when props were changed', () => {
   const prevPropsQuery = "James%20Cameron"
   const newPropsQuery = "Quentin%20Tarantino"
   const spy = sinon.spy(SearchResultPage.prototype, 'componentDidUpdate')
-  const wrapper = shallow(<SearchResultPage query={prevPropsQuery} movies={movies} fetchMovies={fetchMovies} />)
+  const wrapper = shallow(
+    <SearchResultPage
+      query={prevPropsQuery}
+      movies={movies}
+      fetchMovies={fetchMovies}
+    />)
   expect(spy.calledOnce).toBe(false)
   wrapper.setProps({query: newPropsQuery })
   expect(spy.calledOnce).toBe(true)
