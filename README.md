@@ -29,9 +29,9 @@ yarn run dev
 
 ### run test with : ###
 ```bash
-npm test -- --watch
+npm test -- --watch --coverage
 ```
 or
 ```bash
-yarn test -- --watch
+yarn test -- --watch --coverage
 ```
