@@ -8,6 +8,7 @@ let fetchMovies
 
 beforeEach(() => {
   fetchMovies = jest.fn()
+  
 })
 
 test('should render SearchResultPage correctly', () => {
@@ -20,17 +21,20 @@ test('should render SearchResultPage with movies data', () => {
   expect(wrapper).toMatchSnapshot()
 })
 
-test('should change SerchResultPage when props were changed', () => {
-  const prevPropsQuery = "James%20Cameron"
-  const newPropsQuery = "Quentin%20Tarantino"
+test('should change SearchResultPage when props were changed', () => {
+  const prevPropsQuery = 'James Cameron'
+  const newPropsQuery = 'Quentin Tarantino'
+  const criterion = 'director'
   const spy = sinon.spy(SearchResultPage.prototype, 'componentDidUpdate')
   const wrapper = shallow(
     <SearchResultPage
       query={prevPropsQuery}
+      criterion={criterion}
       movies={movies}
       fetchMovies={fetchMovies}
     />)
   expect(spy.calledOnce).toBe(false)
   wrapper.setProps({query: newPropsQuery })
   expect(spy.calledOnce).toBe(true)
+  expect(fetchMovies).toHaveBeenLastCalledWith(criterion, newPropsQuery)
 })
