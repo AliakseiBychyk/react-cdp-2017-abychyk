@@ -1,14 +1,13 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import sinon from 'sinon'
-import SearchResultPage from '../../components/SearchResultPage/SearchResultPage'
-import movies from '../fixtures/testingMovieQuery.json'
+import SearchResultPage from './SearchResultPage'
+import movies from '../../fixtures/testingMovieQuery.json'
 
 let fetchMovies
 
 beforeEach(() => {
   fetchMovies = jest.fn()
-  
 })
 
 test('should render SearchResultPage correctly', () => {
@@ -24,17 +23,29 @@ test('should render SearchResultPage with movies data', () => {
 test('should change SearchResultPage when props were changed', () => {
   const prevPropsQuery = 'James Cameron'
   const newPropsQuery = 'Quentin Tarantino'
-  const criterion = 'director'
   const spy = sinon.spy(SearchResultPage.prototype, 'componentDidUpdate')
   const wrapper = shallow(
     <SearchResultPage
       query={prevPropsQuery}
-      criterion={criterion}
       movies={movies}
       fetchMovies={fetchMovies}
     />)
   expect(spy.calledOnce).toBe(false)
   wrapper.setProps({query: newPropsQuery })
   expect(spy.calledOnce).toBe(true)
-  expect(fetchMovies).toHaveBeenLastCalledWith(criterion, newPropsQuery)
+})
+
+test('should not change SearchResultPage when props were not changed', () => {
+  const query = 'Paul Verhoeven'
+  const criterion = 'director'
+  const wrapper = shallow(
+    <SearchResultPage
+      query={query}
+      criterion={criterion}
+      movies={movies}
+      fetchMovies={fetchMovies}
+    />)
+    expect(fetchMovies).toHaveBeenCalledWith(criterion, query);
+  wrapper.setProps({ query })
+  expect(fetchMovies).toHaveBeenCalledTimes(1)
 })

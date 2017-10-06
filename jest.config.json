@@ -1,7 +1,7 @@
 {
   "setupFiles": [
     "raf/polyfill",
-    "<rootDir>/src/tests/setupTests.js"
+    "<rootDir>/src/setupTests.js"
   ],
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
@@ -10,5 +10,9 @@
     "^.+\\.(css|scss)$": "identity-obj-proxy"
   },
   "collectCoverage": true,
-  "coverageFormats": ["json", "html"]
+  "collectCoverageFrom": [
+    "src/**/*.js"
+  ],
+  "coverageReporters": ["json", "lcov", "text"]
 }
+

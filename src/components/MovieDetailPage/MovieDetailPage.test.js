@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import MovieDetailPage from '../../components/MovieDetailPage/MovieDetailPage'
-import movies from '../fixtures/testingMovieQuery.json'
+import MovieDetailPage from './MovieDetailPage'
+import movies from '../../fixtures/testingMovieQuery.json'
 
 let fetchMovies
 

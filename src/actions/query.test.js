@@ -1,4 +1,4 @@
-import { setSearchCriterion, setSearchQuery } from '../../actions/query'
+import { setSearchCriterion, setSearchQuery } from './query'
 
 test('should setup set search criterion action object with provided data', () => {
   const action = setSearchCriterion('title')

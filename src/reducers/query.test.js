@@ -1,8 +1,8 @@
-import queryReducer from '../../reducers/query'
+import queryReducer from './query'
 import query from '../fixtures/query'
 
 test('should set default state', () => {
-  const state = queryReducer(undefined, { type: '@@INIT' })
+  const state = queryReducer(undefined, { type: 'test-action' })
   expect(state).toEqual({searchCriterion: 'director', searchQuery: ''})
 })
 

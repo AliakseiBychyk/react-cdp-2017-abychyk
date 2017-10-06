@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import SearchHeader from '../../components/SearchHeader/SearchHeader'
+import SearchHeader from './SearchHeader'
 
 let wrapper
 

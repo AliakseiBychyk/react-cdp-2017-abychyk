@@ -1,8 +1,8 @@
-import moviesReducer from '../../reducers/movies'
+import moviesReducer from './movies'
 import movies from '../fixtures/testingMovieQuery.json'
 
 test('should set default state', () => {
-  const state = moviesReducer(undefined, { type: '@@INIT' })
+  const state = moviesReducer(undefined, {});
   expect(state).toEqual([])
 })
 

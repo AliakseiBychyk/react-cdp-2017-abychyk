@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import MoviePreview from '../../components/MoviePreview/MoviePreview'
-import movies from '../fixtures/testingMovieQuery.json'
-import error from '../fixtures/errorResponse.json'
+import MoviePreview from './MoviePreview'
+import movies from '../../fixtures/testingMovieQuery.json'
+import error from '../../fixtures/errorResponse.json'
 
 test('should render MoviePreview correctly', () => {
   const wrapper = shallow(<MoviePreview />)
