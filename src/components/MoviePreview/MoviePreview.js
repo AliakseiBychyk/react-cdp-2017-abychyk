@@ -25,4 +25,20 @@ const MoviePreview = (props) => {
   )
 }
 
+MoviePreview.propTypes = {
+  onClick: PropTypes.func,
+  unit: PropTypes.number,
+  show_id: PropTypes.number,
+  show_title: PropTypes.string,
+  releade_year: PropTypes.string,
+  rating: PropTypes.string,
+  category: PropTypes.string,
+  show_cast: PropTypes.string,
+  director: PropTypes.string,
+  summary: PropTypes.string,
+  poster: PropTypes.string,
+  mediatype: PropTypes.number,
+  runtime: PropTypes.string
+}
+
 export default MoviePreview

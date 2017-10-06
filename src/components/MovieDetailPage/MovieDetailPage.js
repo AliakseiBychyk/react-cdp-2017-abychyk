@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import MovieItem from '../MovieItem/MovieItem'
 import MovieList from '../MovieList/MovieList'
 import styles from './MovieDetailPage.css'
@@ -22,6 +23,13 @@ class MovieDetailPage extends Component {
       </div>
     )
   }
+}
+
+MovieDetailPage.propTypes = {
+  movies: PropTypes.array,
+  movie: PropTypes.object,
+  title: PropTypes.string,
+  fetchMovies: PropTypes.func,
 }
 
 export default MovieDetailPage

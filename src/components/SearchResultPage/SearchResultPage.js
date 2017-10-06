@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import SearchHeader from '../SearchHeader/SearchHeader'
 import MovieList from '../MovieList/MovieList'
 import styles from './SearchResultPage.css'
@@ -24,6 +25,13 @@ class SearchResultPage extends Component {
       </div>
     )
   }
+}
+
+SearchResultPage.propTypes = {
+  movies: PropTypes.array,
+  criterion: PropTypes.string,
+  query: PropTypes.string,
+  fetchMovies: PropTypes.func,
 }
 
 export default SearchResultPage

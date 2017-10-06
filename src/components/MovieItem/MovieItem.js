@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import styles from './MovieItem.css'
@@ -40,5 +41,9 @@ const MovieItem = ({movie}) => (
     </div>
   : null  
 )
+
+MovieItem.propTypes = {
+  movie: PropTypes.object,
+}
 
 export default MovieItem

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 import styles from './SearchHeader.css'
@@ -68,6 +69,10 @@ class SearchHeader extends Component {
       </div>
     )
   }  
+}
+
+SearchHeader.propTypes = {
+  
 }
 
 export default SearchHeader

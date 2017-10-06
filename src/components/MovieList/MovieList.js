@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import MoviePreview from '../MoviePreview/MoviePreview'
 import styles from './MovieList.css'
 
@@ -20,6 +21,10 @@ class MovieList extends Component {
     </div>
     )
   }
+}
+
+MovieList.propTypes = {
+  movies: PropTypes.array,
 }
 
 export default MovieList

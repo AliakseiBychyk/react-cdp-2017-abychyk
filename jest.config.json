@@ -11,7 +11,7 @@
   },
   "collectCoverage": true,
   "collectCoverageFrom": [
-    "src/**/*.js"
+    "src/**/*.js", "!src/index.js", "!src/store/*.js"
   ],
   "coverageReporters": ["json", "lcov", "text"]
 }
