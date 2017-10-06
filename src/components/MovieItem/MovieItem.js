@@ -20,7 +20,7 @@ const MovieItem = ({movie}) => (
         />
         <div className={styles.text}>
           <div>
-            <p3 className={styles.title}>{movie.show_title}</p3>
+            <h3 className={styles.title}>{movie.show_title}</h3>
             <div>{movie.rating}</div>
           </div>
           <div>

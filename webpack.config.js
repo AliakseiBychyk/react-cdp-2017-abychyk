@@ -1,9 +1,11 @@
 const webpack = require('webpack')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 
 module.exports = (env) => {
   const isProduction = env === 'production'
+  const CSSExtract = new ExtractTextPlugin('style.css')
 
   return {
     entry: './src/index.js',
@@ -41,18 +43,20 @@ module.exports = (env) => {
           loader: 'json-loader'
         },
         {
-          test: /\.css$/,
-          loaders: [
-            'style-loader?sourceMap',
-            'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-          ]
+          test: /\.s?css$/,
+          use: CSSExtract.extract({
+            use: [
+              'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+              'autoprefixer-loader',
+              'sass-loader'
+            ]
+          })
         },
-        {
-          test: /\.scss$/,
-          loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
-        }
       ]
     },
+    plugins: [
+      CSSExtract
+    ],
     devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
