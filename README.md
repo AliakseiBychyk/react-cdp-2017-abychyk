@@ -1,4 +1,4 @@
-# HOMEWORK React mentoring -- Aliaksei Bychyk #
+# HOMEWORK React mentoring -- Aliaksei Bychyk -- 2017 #
 
 
 ### server listening on http://localhost:8060 ###
@@ -18,13 +18,22 @@ or
 yarn start
 ```
 
-### run webdriver with : ###
+### run webdriver for development with : ###
 ```bash 
-npm run dev
+npm run build:dev
 ```
 or
 ```bash
-yarn run dev
+yarn run build:dev
+```
+
+### run webdriver for production with : ###
+```bash 
+npm run build:prod
+```
+or
+```bash
+yarn run build:prod
 ```
 
 ### run test with : ###

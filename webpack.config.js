@@ -2,57 +2,61 @@ const webpack = require('webpack')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const path = require('path')
 
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.join(__dirname, '/public'),
-    filename: 'bundle.js'
-  },
+module.exports = (env) => {
+  const isProduction = env === 'production'
 
-  plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //     drop_console: false,
-    //   }
-    // }),
-    // new webpack.HotModuleReplacementPlugin(),
-    // new OptimizeCssAssetsPlugin({
-    //   assetNameRegExp: /\.optimize\.css$/g,
-    //   cssProcessor: require('cssnano'),
-    //   cssProcessorOptions: { discardComments: { removeAll: true } },
-    //   canPrint: true,
-    // }),
-  ],
+  return {
+    entry: './src/index.js',
+      output: {
+      path: path.join(__dirname, '/public'),
+        filename: 'bundle.js'
+    },
 
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.json$/,
-        exclude: /(node_modules)/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.css$/,
-        loaders: [
-          'style-loader?sourceMap',
-          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+    plugins: [
+      // new webpack.optimize.UglifyJsPlugin({
+      //   compress: {
+      //     warnings: false,
+      //     drop_console: false,
+      //   }
+      // }),
+      // new webpack.HotModuleReplacementPlugin(),
+      // new OptimizeCssAssetsPlugin({
+      //   assetNameRegExp: /\.optimize\.css$/g,
+      //   cssProcessor: require('cssnano'),
+      //   cssProcessorOptions: { discardComments: { removeAll: true } },
+      //   canPrint: true,
+      // }),
+    ],
+
+      module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          loader: 'babel-loader'
+        },
+        {
+          test: /\.json$/,
+          exclude: /(node_modules)/,
+          loader: 'json-loader'
+        },
+        {
+          test: /\.css$/,
+          loaders: [
+            'style-loader?sourceMap',
+            'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+          ]
+        },
+        {
+          test: /\.scss$/,
+          loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
+        }
       ]
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
-      }
-    ]
-  },
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true
+    },
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    devServer: {
+      contentBase: path.join(__dirname, 'public'),
+        historyApiFallback: true
+    }
   }
 }
