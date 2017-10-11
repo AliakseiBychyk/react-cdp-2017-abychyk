@@ -4,10 +4,12 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 import AppRouter from './routes/AppRouter'
 
-import { fetchMovies } from './actions/movies'
-import { setSearchCriterion, setSearchQuery } from './actions/query'
 
-const store = configureStore()
+const preloadedState = window.initialData
+console.log('preloaded State =', preloadedState)
+delete window.initialData
+
+const store = configureStore(preloadedState)
 
 const jsx = (
   <Provider store={store}>

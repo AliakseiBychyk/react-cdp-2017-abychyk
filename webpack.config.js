@@ -5,7 +5,10 @@ const path = require('path')
 
 module.exports = (env) => {
   const isProduction = env === 'production'
-  const CSSExtract = new ExtractTextPlugin('styles.css')
+  const CSSExtract = new ExtractTextPlugin({
+    filename: 'styles.css',
+    allChunks: true
+  })
 
   return {
     entry: './src/index.js',
@@ -15,22 +18,10 @@ module.exports = (env) => {
     },
 
     plugins: [
-      // new webpack.optimize.UglifyJsPlugin({
-      //   compress: {
-      //     warnings: false,
-      //     drop_console: false,
-      //   }
-      // }),
-      // new webpack.HotModuleReplacementPlugin(),
-      // new OptimizeCssAssetsPlugin({
-      //   assetNameRegExp: /\.optimize\.css$/g,
-      //   cssProcessor: require('cssnano'),
-      //   cssProcessorOptions: { discardComments: { removeAll: true } },
-      //   canPrint: true,
-      // }),
+        CSSExtract
     ],
 
-      module: {
+    module: {
       loaders: [
         {
           test: /\.js$/,
@@ -46,7 +37,15 @@ module.exports = (env) => {
           test: /\.s?css$/,
           use: CSSExtract.extract({
             use: [
-              'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+              {
+                loader: 'css-loader',
+                options: {
+                  sourceMap: true,
+                  importLoaders: 1,
+                  modules: true,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              },
               'autoprefixer-loader',
               'sass-loader'
             ]
@@ -54,9 +53,6 @@ module.exports = (env) => {
         },
       ]
     },
-    plugins: [
-      CSSExtract
-    ],
     devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
