@@ -13,7 +13,7 @@ server.use(express.static('public'))
 
 server.get('/*', (req, res) => {
   serverRender().then(({initialMarkup, initialData}) => {
-    
+
     console.log('in server initialMarkup: ', initialMarkup)
     console.log('in server initialData: ', initialData)
 

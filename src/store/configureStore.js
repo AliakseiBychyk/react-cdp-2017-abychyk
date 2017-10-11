@@ -10,7 +10,7 @@ export default (preloadedState = '') => {
       query: queryReducer
     }),
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    preloadedState,
+    // preloadedState,
     applyMiddleware(thunk),
     
   )
