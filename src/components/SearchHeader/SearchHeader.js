@@ -24,9 +24,9 @@ class SearchHeader extends Component {
 
   submitForm = (e) => {
     e.preventDefault()
-    this.setState({ fireRedirect: true })
+    this.props.redirectTo(`/search/${this.state.query}?criterion=${this.state.criterion}`) 
   }
-
+  
   render() {
     const { fireRedirect } = this.state
     
@@ -58,21 +58,13 @@ class SearchHeader extends Component {
               >SEARCH</Button>
             </div>
         </Form>  
-        {fireRedirect && (
-          <Redirect
-            to={{
-              pathname: `/search/${this.state.query}`,
-              search: `?criterion=${this.state.criterion}`
-            }}
-          />
-        )}
       </div>
     )
   }  
 }
 
 SearchHeader.propTypes = {
-  
+  reditectTo: PropTypes.func
 }
 
 export default SearchHeader

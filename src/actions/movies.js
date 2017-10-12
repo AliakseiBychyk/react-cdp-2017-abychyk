@@ -1,4 +1,4 @@
-import 'whatwg-fetch'
+import 'fetch-everywhere'
 export const RECEIVE_MOVIES = 'RECEIVE_MOVIES'
 
 const fetchMoviesJson = (criterion, query) => {

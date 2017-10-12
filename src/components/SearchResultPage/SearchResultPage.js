@@ -15,10 +15,14 @@ class SearchResultPage extends Component {
     }
   }
 
+  redirectTo = (url) => {
+    this.props.history.push(url)
+  }
+
   render() {
     return (
       <div className={styles.home}>
-        <SearchHeader />
+        <SearchHeader redirectTo={this.redirectTo}/>
         <MovieList
           movies={this.props.movies}
         />
