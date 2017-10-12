@@ -22,6 +22,8 @@ const serverRender = (req, res) => {
     </Provider>
   )
   const initialData = store.getState()
+
+  console.log('initial data', initialData)
   
   if (context.url) {
     res.writeHead(301, {
