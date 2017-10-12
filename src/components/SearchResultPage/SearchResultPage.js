@@ -22,7 +22,7 @@ class SearchResultPage extends Component {
   render() {
     return (
       <div className={styles.home}>
-        <SearchHeader redirectTo={this.redirectTo}/>
+        <SearchHeader defaultQuery={this.props.query} redirectTo={this.redirectTo}/>
         <MovieList
           movies={this.props.movies}
         />

@@ -5,10 +5,19 @@ import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootst
 import styles from './SearchHeader.css'
 
 class SearchHeader extends Component {
-  state = {
+  static defaultProps = {
     criterion: 'director',
-    query: '',
-    fireRedirect: false
+    query: ''
+  }
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      criterion: props.criterion,
+      query: decodeURIComponent(props.defaultQuery),
+      fireRedirect: false
+    }
   }
 
   setCriterion = () => {
@@ -36,7 +45,9 @@ class SearchHeader extends Component {
             <ControlLabel>FIND YOUR MOVIE</ControlLabel>
             <FormControl
               type="text"
+              name="title"
               placeholder="Quentin Tarantino"
+              defaultValue={this.state.query}
               onChange={this.setInputValue}
             />
             <div className={styles.searchByButtons}>
@@ -64,6 +75,7 @@ class SearchHeader extends Component {
 }
 
 SearchHeader.propTypes = {
+  criterion: PropTypes.string,
   reditectTo: PropTypes.func
 }
 

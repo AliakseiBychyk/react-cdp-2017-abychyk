@@ -10,7 +10,7 @@ const HomePage = (props) => {
 
   return (
     <div className={styles.home}>
-      <SearchHeader redirectTo={redirectTo} />
+      <SearchHeader redirectTo={redirectTo} defaultQuery="Quentin Tarantino"/>
     </div>
   )
 }
