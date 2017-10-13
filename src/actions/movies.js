@@ -3,7 +3,7 @@ export const RECEIVE_MOVIES = 'RECEIVE_MOVIES'
 
 const fetchMoviesJson = (criterion, query) => {
   const url = `https://netflixroulette.net/api/api.php?${criterion}=${query}`
-  console.info('url: ', url)
+  console.info('url from actions: ', url)
   return fetch(url, {
     method: 'GET'
   }).then(resp => resp.json())

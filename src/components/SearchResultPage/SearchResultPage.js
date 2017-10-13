@@ -3,8 +3,13 @@ import PropTypes from 'prop-types'
 import SearchHeader from '../SearchHeader/SearchHeader'
 import MovieList from '../MovieList/MovieList'
 import styles from './SearchResultPage.css'
+import {fetchMovies} from '../../actions/movies'
 
 class SearchResultPage extends Component {
+  static fetchData(store, criterion, query) {
+    return store.dispatch(fetchMovies(criterion, query))
+  }
+
   componentWillMount() {
     this.props.fetchMovies(this.props.criterion, this.props.query)
   }

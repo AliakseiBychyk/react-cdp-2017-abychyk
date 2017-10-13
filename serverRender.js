@@ -6,39 +6,43 @@ import { matchRoutes, renderRoutes } from 'react-router-config'
 import configureStore from './src/store/configureStore'
 import App from './src/routes/App'
 import HomePage from './src/components/HomePage/HomePage'
+import routes from './src/routes/routes'
+
 
 const serverRender = (req, res) => {
-  // const branch = matchRoutes(routes, )
+  const store = configureStore() 
 
+  const branch = matchRoutes(routes, req.url) 
 
+  const promises = branch.map(({route, match}) => {
 
+    // here I have to implement some logic to get criterion and query
+    let criterion
+    let query = match.params.show_title
+    
+    let fetchData = route.component.fetchData
 
-  const context = {}
-  const store = configureStore()
-
-  const initialMarkup = renderToString(
-    <Provider store={store}>
-      <StaticRouter
-        location={req.url}
-        context={context}
-      >
-        <App />
-      </StaticRouter>
-    </Provider>
-  )
-  const initialData = store.getState()
-
-  console.log('initial data', initialData)
+    return fetchData instanceof Function 
+      ? fetchData(store, criterion='title', query)
+      : Promise.resolve(null)
+  })
   
-  if (context.url) {
-    res.writeHead(301, {
-      Location: context.url
-    })
-    res.end()
-  } else {
+  return Promise.all(promises).then(() => {
+    const context = {}
+    const initialMarkup = renderToString(
+      <Provider store={store}>
+        <StaticRouter
+          location={req.url}
+          context={context}
+        >
+          {renderRoutes(routes)}
+        </StaticRouter>
+      </Provider>
+    )
+    const initialData = store.getState()
+    
     res.render('index', {initialMarkup, initialData})
-    res.end()
-  }
+  })
 }
 
 export default serverRender
