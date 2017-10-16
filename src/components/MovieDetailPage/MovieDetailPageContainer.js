@@ -6,7 +6,7 @@ const mapStateToProps = (state, props) => {
   return {
     movies: state.movies,
     movie: state.movies.find(movie => 
-     movie.title == props.match.params.title
+      decodeURIComponent(movie.title) == decodeURIComponent(props.match.params.title)
     )
   }
 }
