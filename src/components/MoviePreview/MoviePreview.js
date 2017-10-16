@@ -16,7 +16,7 @@ const MoviePreview = (props) => {
 
   return (
     <div className={styles.moviePreview}>
-      <Link to={`/movie/${props.id}`}>  
+      <Link to={`/movie/${props.title}`}>  
         <img
           src={`https://image.tmdb.org/t/p/w500${props.poster_path}`}
           alt={props.title}

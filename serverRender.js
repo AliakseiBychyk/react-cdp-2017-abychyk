@@ -18,9 +18,14 @@ const serverRender = (req, res) => {
 
     const criterion = !!match.params.searchQuery 
       ? match.params.searchQuery.split('?').pop().split('=').pop()
-      : 'person'
-    const query = match.params.searchQuery.split('?').shift()
+      : 'movie'   
+    console.log('CRITERION', criterion)
     
+    const query = !!match.params.searchQuery
+      ? match.params.searchQuery.split('?').shift()
+      : match.params.title
+    console.log('QUERY', query)
+
     const fetchData = route.component.fetchData
 
     return fetchData instanceof Function 
