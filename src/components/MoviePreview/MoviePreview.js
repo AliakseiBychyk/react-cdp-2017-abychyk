@@ -13,12 +13,13 @@ const MoviePreview = (props) => {
       </div>
     )
   }
+
   return (
     <div className={styles.moviePreview}>
-      <Link to={`/movie/${props.show_title}`}>  
+      <Link to={`/movie/${props.id}`}>  
         <img
-          src={props.poster}
-          alt={props.show_title}
+          src={`https://image.tmdb.org/t/p/w500${props.poster_path}`}
+          alt={props.title}
           className={styles.img} />
       </Link>
     </div>
@@ -27,18 +28,15 @@ const MoviePreview = (props) => {
 
 MoviePreview.propTypes = {
   onClick: PropTypes.func,
-  unit: PropTypes.number,
-  show_id: PropTypes.number,
-  show_title: PropTypes.string,
-  releade_year: PropTypes.string,
-  rating: PropTypes.string,
-  category: PropTypes.string,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  release_date: PropTypes.string,
+  vote_average: PropTypes.number,
   show_cast: PropTypes.string,
   director: PropTypes.string,
-  summary: PropTypes.string,
-  poster: PropTypes.string,
-  mediatype: PropTypes.number,
-  runtime: PropTypes.string
+  overview: PropTypes.string,
+  poster_path: PropTypes.string,
+  media_type: PropTypes.string,
 }
 
 export default MoviePreview

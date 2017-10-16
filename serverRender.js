@@ -18,12 +18,12 @@ const serverRender = (req, res) => {
 
     // here I have to implement some logic to get criterion and query
     let criterion
-    let query = match.params.show_title
+    let query = match.params.id
     
     let fetchData = route.component.fetchData
 
     return fetchData instanceof Function 
-      ? fetchData(store, criterion='title', query)
+      ? fetchData(store, criterion='movie', query)
       : Promise.resolve(null)
   })
   

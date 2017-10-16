@@ -5,10 +5,9 @@ import MovieDetailPage from './MovieDetailPage'
 const mapStateToProps = (state, props) => {
   return {
     movies: state.movies,
-    movie: state.movies.find((movie) => 
-      movie.show_title === props.match.params.show_title
-    ),
-    title: props.match.params.show_title,
+    movie: state.movies.find(movie => 
+      movie.id == props.match.params.id
+    )
   }
 }
 

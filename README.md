@@ -1,5 +1,6 @@
 # HOMEWORK React mentoring -- Aliaksei Bychyk -- 2017 #
 
+## _The app was refactored to work with Themoviedb API - since Netflix API is unavailable_ 
 
 ### server listening on http://localhost:8060 ###
 

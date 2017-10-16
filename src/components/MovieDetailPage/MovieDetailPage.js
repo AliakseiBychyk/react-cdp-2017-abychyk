@@ -12,17 +12,19 @@ class MovieDetailPage extends Component {
 
   componentWillMount() {
     if (this.props.movies.length === 0) {
-      this.props.fetchMovies('title', encodeURIComponent(this.props.title))
+      this.props.fetchMovies('movie', encodeURIComponent(this.props.title))
     }   
   }
 
   render() {
+    console.log(this.props.movie)
     return (
       <div className={styles.detail}>
         <MovieItem
           movie={this.props.movie}
         />
         <MovieList
+          onMovieClick={this.onMovieClick} 
           movies={this.props.movies}
         />
       </div>
@@ -33,7 +35,6 @@ class MovieDetailPage extends Component {
 MovieDetailPage.propTypes = {
   movies: PropTypes.array,
   movie: PropTypes.object,
-  title: PropTypes.string,
   fetchMovies: PropTypes.func,
 }
 

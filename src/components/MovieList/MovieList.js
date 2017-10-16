@@ -11,9 +11,9 @@ class MovieList extends Component {
   render() {
     return (
       <div className={styles.movieList}>
-      {this.props.movies.map((movie, index) =>
+      {this.props.movies.map(movie =>
         <MoviePreview
-          key={index}
+          key={movie.id}
           onClick={this.props.onMovieClick}
           {...movie}
         />

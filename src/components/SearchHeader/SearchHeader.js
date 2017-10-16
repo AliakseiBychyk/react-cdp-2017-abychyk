@@ -6,7 +6,7 @@ import styles from './SearchHeader.css'
 
 class SearchHeader extends Component {
   static defaultProps = {
-    criterion: 'director',
+    criterion: 'person',
     query: ''
   }
 
@@ -21,9 +21,9 @@ class SearchHeader extends Component {
   }
 
   setCriterion = () => {
-    let criterion = this.state.criterion === 'director'
-      ? 'title'
-      : 'director'
+    let criterion = this.state.criterion === 'person'
+      ? 'movie'
+      : 'person'
     this.setState({ criterion })
   }
 
@@ -55,12 +55,12 @@ class SearchHeader extends Component {
               
               <Button
                 onClick={this.setCriterion}
-                bsStyle={(this.state.criterion === 'title') ? 'primary' : 'default'}
-              >TITLE</Button>
+                bsStyle={(this.state.criterion === 'movie') ? 'primary' : 'default'}
+              >MOVIE</Button>
               
               <Button
                 onClick={this.setCriterion}
-                bsStyle={(this.state.criterion === 'director') ? 'primary' : 'default'}
+                bsStyle={(this.state.criterion === 'person') ? 'primary' : 'default'}
               >DIRECTOR</Button>          
                 
               <Button
@@ -76,7 +76,7 @@ class SearchHeader extends Component {
 
 SearchHeader.propTypes = {
   criterion: PropTypes.string,
-  reditectTo: PropTypes.func
+  redirectTo: PropTypes.func
 }
 
 export default SearchHeader

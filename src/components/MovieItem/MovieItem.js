@@ -14,27 +14,20 @@ const MovieItem = ({movie}) => (
       </div>
       <div className={styles.details}>
         <img
-          src={movie.poster}
-          alt={movie.show_title}
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
           className={styles.img}
         />
         <div className={styles.text}>
           <div>
-            <h3 className={styles.title}>{movie.show_title}</h3>
-            <div>{movie.rating}</div>
+            <h3 className={styles.title}>{movie.title}</h3>
+            <div>{movie.vote_average}</div>
           </div>
           <div>
-            <div>{movie.release_year}</div>
-            <div>{movie.runtime}</div>
+            <div>{movie.release_date}</div>
           </div>
           <div className={styles.summary}>
-            {movie.summary}  
-          </div>
-          <div className={styles.director}>
-            Director: {movie.director}  
-          </div>
-          <div className={styles.cast}>
-            Cast: {movie.show_cast}  
+            {movie.overview}  
           </div>
         </div>
       </div>
