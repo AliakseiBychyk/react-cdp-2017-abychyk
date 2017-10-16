@@ -15,7 +15,6 @@ const fetchMoviesJson = (criterion, query) => {
         : data.results[0].known_for
     })
     .then(res => {
-      console.log('fetching result', res)
       return res
     })
     .catch(console.error)

@@ -6,7 +6,7 @@ import AppRouter from './routes/AppRouter'
 
 
 const preloadedState = window.initialData
-console.log('preloaded State =', preloadedState)
+
 delete window.initialData
 
 const store = configureStore(preloadedState)

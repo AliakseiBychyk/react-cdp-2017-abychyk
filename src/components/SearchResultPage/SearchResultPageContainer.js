@@ -8,7 +8,7 @@ const mapStateToProps = (state, props) => {
   return {
     movies: state.movies,
     criterion: new URLSearchParams(props.location.search).get('criterion'),
-    query: encodeURIComponent(props.match.params.searchQuery.trim())
+    query: decodeURIComponent(props.match.params.searchQuery)
   }
 }
 

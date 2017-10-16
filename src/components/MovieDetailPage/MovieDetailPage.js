@@ -12,7 +12,7 @@ class MovieDetailPage extends Component {
 
   componentWillMount() {
     if (this.props.movies.length === 0) {
-      this.props.fetchMovies('movie', encodeURIComponent(this.props.title))
+      this.props.fetchMovies('movie', this.poros.title)
     }   
   }
 

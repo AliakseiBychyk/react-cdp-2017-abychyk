@@ -15,7 +15,7 @@ class SearchHeader extends Component {
 
     this.state = {
       criterion: props.criterion,
-      query: decodeURIComponent(props.defaultQuery),
+      query: props.defaultQuery,
       fireRedirect: false
     }
   }
@@ -28,7 +28,7 @@ class SearchHeader extends Component {
   }
 
   setInputValue = (event) => {
-    this.setState({ query: encodeURIComponent(event.target.value.trim()) })
+    this.setState({ query: event.target.value })
   }
 
   submitForm = (e) => {
