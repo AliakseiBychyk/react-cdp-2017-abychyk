@@ -1,6 +1,6 @@
 # HOMEWORK React mentoring -- Aliaksei Bychyk -- 2017 #
 
-### The app is developed to work with Netflix API - currently this api is unavailable ### 
+## _The app was developed to work with Netflix API - currently this api is unavailable_ 
 
 
 ### server listening on http://localhost:8060 ###
