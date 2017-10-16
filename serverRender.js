@@ -16,14 +16,15 @@ const serverRender = (req, res) => {
 
   const promises = branch.map(({route, match}) => {
 
-    // here I have to implement some logic to get criterion and query
-    let criterion
-    let query = match.params.id
+    const criterion = !!match.params.searchQuery 
+      ? match.params.searchQuery.split('?').pop().split('=').pop()
+      : 'person'
+    const query = match.params.searchQuery.split('?').shift()
     
-    let fetchData = route.component.fetchData
+    const fetchData = route.component.fetchData
 
     return fetchData instanceof Function 
-      ? fetchData(store, criterion='movie', query)
+      ? fetchData(store, criterion, query)
       : Promise.resolve(null)
   })
   
@@ -40,6 +41,7 @@ const serverRender = (req, res) => {
       </Provider>
     )
     const initialData = store.getState()
+    console.log('initialData', initialData)
     
     res.render('index', {initialMarkup, initialData})
   })

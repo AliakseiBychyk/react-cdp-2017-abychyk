@@ -8,6 +8,7 @@ const composeEnhancers = typeof window === 'object'
   : compose
 
 export default (preloadedState = '') => {
+  console.log('preloadedState is = ', preloadedState)
   const store = createStore(
     combineReducers({
       movies: moviesReducer,
