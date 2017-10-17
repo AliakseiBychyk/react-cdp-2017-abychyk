@@ -19,12 +19,10 @@ const serverRender = (req, res) => {
     const criterion = !!match.params.searchQuery 
       ? match.params.searchQuery.split('?').pop().split('=').pop()
       : 'movie'   
-    console.log('CRITERION', criterion)
     
     const query = !!match.params.searchQuery
       ? match.params.searchQuery.split('?').shift()
       : match.params.title
-    console.log('QUERY', query)
 
     const fetchData = route.component.fetchData
 
@@ -45,9 +43,7 @@ const serverRender = (req, res) => {
         </StaticRouter>
       </Provider>
     )
-    const initialData = store.getState()
-    console.log('initialData', initialData)
-    
+    const initialData = store.getState()  
     res.render('index', {initialMarkup, initialData})
   })
 }

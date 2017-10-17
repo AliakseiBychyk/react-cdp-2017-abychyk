@@ -14,7 +14,6 @@ class MovieList extends Component {
       {this.props.movies.map(movie =>
         <MoviePreview
           key={movie.id}
-          onClick={this.props.onMovieClick}
           {...movie}
         />
       )}
@@ -24,7 +23,7 @@ class MovieList extends Component {
 }
 
 MovieList.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default MovieList

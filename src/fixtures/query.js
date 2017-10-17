@@ -1,4 +1,4 @@
 export default {
-  searchCriterion: 'director',
+  searchCriterion: 'person',
   searchQuery: 'Quentin Tarantino'
 }

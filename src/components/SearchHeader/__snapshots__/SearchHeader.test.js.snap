@@ -20,6 +20,7 @@ exports[`should render SearchHeader correctly 1`] = `
     <FormControl
       bsClass="form-control"
       componentClass="input"
+      name="title"
       onChange={[Function]}
       placeholder="Quentin Tarantino"
       type="text"
@@ -41,7 +42,7 @@ exports[`should render SearchHeader correctly 1`] = `
         disabled={false}
         onClick={[Function]}
       >
-        TITLE
+        MOVIE
       </Button>
       <Button
         active={false}

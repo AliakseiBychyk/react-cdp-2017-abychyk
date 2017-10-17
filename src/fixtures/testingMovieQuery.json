@@ -1,44 +1,82 @@
-[
-  {
-    "unit": 352,
-    "show_id": 1181461,
-    "show_title": "Titanic",
-    "release_year": "1997",
-    "rating": "3.9",
-    "category": "Dramas",
-    "show_cast": "Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates, Frances Fisher, Gloria Stuart, Bill Paxton, Bernard Hill, David Warner, Victor Garber",
-    "director": "James Cameron",
-    "summary": "This cinematic spectacle -- winner of 11 Oscars -- follows society girl Rose and penniless artist Jack as they fall in love just as tragedy strikes.",
-    "poster": "http://netflixroulette.net/api/posters/1181461.jpg",
-    "mediatype": 0,
-    "runtime": "194 min"
-  },
-  {
-    "unit": 380,
-    "show_id": 1032625,
-    "show_title": "The Terminator",
-    "release_year": "1984",
-    "rating": "3.9",
-    "category": "Action & Adventure",
-    "show_cast": "Arnold Schwarzenegger, Michael Biehn, Linda Hamilton, Paul Winfield, Lance Henriksen, Rick Rossovich, Bess Motta, Earl Boen, Dick Miller, Shawn Schepps",
-    "director": "James Cameron",
-    "summary": "In the post-apocalyptic future, tyrannical machines teleport a cyborg to 1984 to a kill a woman whose unborn son is destined to lead the human rebels.",
-    "poster": "http://netflixroulette.net/api/posters/1032625.jpg",
-    "mediatype": 0,
-    "runtime": "107 min"
-  },
-  {
-    "unit": 1001,
-    "show_id": 60028202,
-    "show_title": "Terminator 2: Judgment Day",
-    "release_year": "1991",
-    "rating": "3.9",
-    "category": "Action & Adventure",
-    "show_cast": "Arnold Schwarzenegger, Linda Hamilton, Robert Patrick, Edward Furlong, Earl Boen, Joe Morton, S. Epatha Merkerson, Castulo Guerra, Danny Cooksey, Jenette Goldstein",
-    "director": "James Cameron",
-    "summary": "A reprogrammed Terminator arrives from the future to protect young John Connor from a relentless shape-shifting cyborg in this sequel to Terminator. On the run, John and his guardian seek John's mother, Sarah, who is locked away in an insane asylum.",
-    "poster": "http://netflixroulette.net/api/posters/60028202.jpg",
-    "mediatype": 0,
-    "runtime": "137 min"
-  }
-]
+{
+  "page": 1,
+  "total_results": 4,
+  "total_pages": 1,
+  "results": [
+    {
+      "vote_count": 859,
+      "id": 402,
+      "video": false,
+      "vote_average": 6.5,
+      "title": "Basic Instinct",
+      "popularity": 11.542996,
+      "poster_path": "/p1DHOfLFZmM567ePKfFNMV4mY92.jpg",
+      "original_language": "en",
+      "original_title": "Basic Instinct",
+      "genre_ids": [
+        53,
+        9648
+      ],
+      "backdrop_path": "/bKdxJMqvr4wltzAQaieA6CTkaa9.jpg",
+      "adult": false,
+      "overview": "A police detective is in charge of the investigation of a brutal murder, in which a beautiful and seductive woman could be involved.",
+      "release_date": "1992-03-20"
+    },
+    {
+      "vote_count": 183,
+      "id": 3093,
+      "video": false,
+      "vote_average": 4.6,
+      "title": "Basic Instinct 2",
+      "popularity": 15.958979,
+      "poster_path": "/gXzrKzHnMmfWCF5PMYQfNOzCxYl.jpg",
+      "original_language": "en",
+      "original_title": "Basic Instinct 2",
+      "genre_ids": [
+        80,
+        9648,
+        53
+      ],
+      "backdrop_path": "/mSE7vKEiWY1NFbvrJIwrcHOtiSH.jpg",
+      "adult": false,
+      "overview": "Novelist Catherine Tramell is once again in trouble with the law, and Scotland Yard appoints psychiatrist Dr. Michael Glass to evaluate her. Though, like Detective Nick Curran before him, Glass is entranced by Tramell and lured into a seductive game.",
+      "release_date": "2006-03-29"
+    },
+    {
+      "vote_count": 0,
+      "id": 258826,
+      "video": false,
+      "vote_average": 0,
+      "title": "Between the Sheets: A Look Inside 'Basic Instinct 2'",
+      "popularity": 1.007875,
+      "poster_path": null,
+      "original_language": "en",
+      "original_title": "Between the Sheets: A Look Inside 'Basic Instinct 2'",
+      "genre_ids": [
+        99
+      ],
+      "backdrop_path": null,
+      "adult": false,
+      "overview": "A Look Inside 'Basic Instinct 2'",
+      "release_date": ""
+    },
+    {
+      "vote_count": 1,
+      "id": 258827,
+      "video": false,
+      "vote_average": 8,
+      "title": "Blonde Poison: The Making of 'Basic Instinct'",
+      "popularity": 1.007685,
+      "poster_path": null,
+      "original_language": "en",
+      "original_title": "Blonde Poison: The Making of 'Basic Instinct'",
+      "genre_ids": [
+        99
+      ],
+      "backdrop_path": null,
+      "adult": false,
+      "overview": "A look behind the scenes at one of the more controversial thillers of the 90's, and the one that made Sharon Stone a top-name star. Includes interviews with Stone and footage of some of the hard work that went into making the movie, as well as some discussion of the problems the makers had to deal with, including protests from groups who wanted the film changed or simply abandoned.",
+      "release_date": ""
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import MovieList from './MovieList'
 import movies from '../../fixtures/testingMovieQuery.json'
 
 test('should render MovieList with movies', () => {
-  const wrapper = shallow(<MovieList movies={movies}/>)
+  const wrapper = shallow(<MovieList movies={movies.results}/>)
   expect(wrapper).toMatchSnapshot()
 })
 

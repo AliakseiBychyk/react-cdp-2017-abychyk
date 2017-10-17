@@ -4,6 +4,11 @@ exports[`should render HomePage correctly 1`] = `
 <div
   className="home"
 >
-  <SearchHeader />
+  <SearchHeader
+    criterion="person"
+    defaultQuery="Quentin Tarantino"
+    query=""
+    redirectTo={[Function]}
+  />
 </div>
 `;

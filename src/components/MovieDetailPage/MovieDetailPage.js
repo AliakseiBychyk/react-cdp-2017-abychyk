@@ -12,12 +12,11 @@ class MovieDetailPage extends Component {
 
   componentWillMount() {
     if (this.props.movies.length === 0) {
-      this.props.fetchMovies('movie', this.poros.title)
+      this.props.fetchMovies('movie', this.props.title)
     }   
   }
 
   render() {
-    console.log(this.props.movie)
     return (
       <div className={styles.detail}>
         <MovieItem

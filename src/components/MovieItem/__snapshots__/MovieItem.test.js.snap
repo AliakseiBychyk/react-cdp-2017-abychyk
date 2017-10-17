@@ -28,47 +28,30 @@ exports[`should render MovieItem with movie 1`] = `
     className="details"
   >
     <img
-      alt="Terminator 2: Judgment Day"
+      alt="Between the Sheets: A Look Inside 'Basic Instinct 2'"
       className="img"
-      src="http://netflixroulette.net/api/posters/60028202.jpg"
+      src="https://image.tmdb.org/t/p/w500null"
     />
     <div
       className="text"
     >
       <div>
-        <p3
+        <h3
           className="title"
         >
-          Terminator 2: Judgment Day
-        </p3>
+          Between the Sheets: A Look Inside 'Basic Instinct 2'
+        </h3>
         <div>
-          3.9
+          0
         </div>
       </div>
       <div>
-        <div>
-          1991
-        </div>
-        <div>
-          137 min
-        </div>
+        <div />
       </div>
       <div
         className="summary"
       >
-        A reprogrammed Terminator arrives from the future to protect young John Connor from a relentless shape-shifting cyborg in this sequel to Terminator. On the run, John and his guardian seek John's mother, Sarah, who is locked away in an insane asylum.
-      </div>
-      <div
-        className="director"
-      >
-        Director: 
-        James Cameron
-      </div>
-      <div
-        className="cast"
-      >
-        Cast: 
-        Arnold Schwarzenegger, Linda Hamilton, Robert Patrick, Edward Furlong, Earl Boen, Joe Morton, S. Epatha Merkerson, Castulo Guerra, Danny Cooksey, Jenette Goldstein
+        A Look Inside 'Basic Instinct 2'
       </div>
     </div>
   </div>

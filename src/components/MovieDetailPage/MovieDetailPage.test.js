@@ -18,8 +18,8 @@ test('should render MovieDetailPage correctly', () => {
 
 test('should render MovieDetailPage with movies correctly', () => {
   const wrapper = shallow(<MovieDetailPage
-    movie={movies[1]}
-    movies={movies}
+    movie={movies.results[1]}
+    movies={movies.results}
     fetchMovies={fetchMovies} />)
   expect(wrapper).toMatchSnapshot()
 })

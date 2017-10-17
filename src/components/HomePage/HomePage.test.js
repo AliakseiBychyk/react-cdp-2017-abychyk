@@ -3,6 +3,7 @@ import { shallow } from 'enzyme'
 import HomePage from './HomePage'
 
 test('should render HomePage correctly', () => {
-  const wrapper = shallow(<HomePage />)
+  const redirectTo = jest.fn()
+  const wrapper = shallow(<HomePage redirectTo={redirectTo} />)
   expect(wrapper).toMatchSnapshot()
 })

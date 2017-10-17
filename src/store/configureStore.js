@@ -13,7 +13,7 @@ export default (preloadedState = '') => {
       movies: moviesReducer,
       query: queryReducer
     }),
-    typeof window === 'object' && preloadedState,
+    typeof window === 'object' ? preloadedState : {},
     composeEnhancers (
       applyMiddleware(thunk)
     )

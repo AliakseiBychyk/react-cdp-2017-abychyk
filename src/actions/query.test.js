@@ -1,10 +1,10 @@
 import { setSearchCriterion, setSearchQuery } from './query'
 
 test('should setup set search criterion action object with provided data', () => {
-  const action = setSearchCriterion('title')
+  const action = setSearchCriterion('movie')
   expect(action).toEqual({
     type: 'SET_SEARCH_CRITERION',
-    searchCriterion: 'title'
+    searchCriterion: 'movie'
   })
 })
 
@@ -17,9 +17,9 @@ test('should setup set search criterion action object with default data', () => 
 })
 
 test('should setup set search query action object', () => {
-  const action = setSearchQuery('The%20Terminator')
+  const action = setSearchQuery('The Terminator')
   expect(action).toEqual({
     type: 'SET_SEARCH_QUERY',
-    searchQuery: 'The%20Terminator'
+    searchQuery: 'The Terminator'
   })
 })

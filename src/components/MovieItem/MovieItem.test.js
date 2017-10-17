@@ -9,6 +9,6 @@ test('should render MovieItem correctly', () => {
 })
 
 test('should render MovieItem with movie', () => {
-  const wrapper = shallow(<MovieItem movie={movies[2]}/>)
+  const wrapper = shallow(<MovieItem movie={movies.results[2]}/>)
   expect(wrapper).toMatchSnapshot()
 })

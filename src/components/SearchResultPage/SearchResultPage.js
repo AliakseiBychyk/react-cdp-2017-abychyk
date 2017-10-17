@@ -37,7 +37,7 @@ class SearchResultPage extends Component {
 }
 
 SearchResultPage.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.arrayOf(PropTypes.object),
   criterion: PropTypes.string,
   query: PropTypes.string,
   fetchMovies: PropTypes.func,

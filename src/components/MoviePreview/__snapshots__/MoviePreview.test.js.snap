@@ -10,6 +10,7 @@ exports[`should render MoviePreview correctly 1`] = `
   >
     <img
       className="img"
+      src="https://image.tmdb.org/t/p/w500undefined"
     />
   </Link>
 </div>
@@ -36,12 +37,11 @@ exports[`should render MoviePreview with movie 1`] = `
 >
   <Link
     replace={false}
-    to="/movie/The Terminator"
+    to="/movie/undefined"
   >
     <img
-      alt="The Terminator"
       className="img"
-      src="http://netflixroulette.net/api/posters/1032625.jpg"
+      src="https://image.tmdb.org/t/p/w500undefined"
     />
   </Link>
 </div>

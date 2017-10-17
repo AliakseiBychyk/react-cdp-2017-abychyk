@@ -16,7 +16,6 @@ class SearchHeader extends Component {
     this.state = {
       criterion: props.criterion,
       query: props.defaultQuery,
-      fireRedirect: false
     }
   }
 
@@ -37,7 +36,6 @@ class SearchHeader extends Component {
   }
   
   render() {
-    const { fireRedirect } = this.state
     
     return (
       <div className={styles.searchHeader}>

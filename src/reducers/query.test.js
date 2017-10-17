@@ -3,11 +3,11 @@ import query from '../fixtures/query'
 
 test('should set default state', () => {
   const state = queryReducer(undefined, { type: 'test-action' })
-  expect(state).toEqual({searchCriterion: 'director', searchQuery: ''})
+  expect(state).toEqual({searchCriterion: 'person', searchQuery: ''})
 })
 
 test('should set search criterion', () => {
-  const searchCriterion = 'title'
+  const searchCriterion = 'movie'
   const action = {
     type: 'SET_SEARCH_CRITERION',
     searchCriterion

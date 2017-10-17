@@ -16,7 +16,7 @@ test('should render SearchResultPage correctly', () => {
 })
 
 test('should render SearchResultPage with movies data', () => {
-  const wrapper = shallow(<SearchResultPage movies={movies} fetchMovies={fetchMovies}/>)
+  const wrapper = shallow(<SearchResultPage movies={movies.results} fetchMovies={fetchMovies}/>)
   expect(wrapper).toMatchSnapshot()
 })
 
@@ -27,7 +27,7 @@ test('should change SearchResultPage when props were changed', () => {
   const wrapper = shallow(
     <SearchResultPage
       query={prevPropsQuery}
-      movies={movies}
+      movies={movies.results}
       fetchMovies={fetchMovies}
     />)
   expect(spy.calledOnce).toBe(false)
@@ -42,7 +42,7 @@ test('should not change SearchResultPage when props were not changed', () => {
     <SearchResultPage
       query={query}
       criterion={criterion}
-      movies={movies}
+      movies={movies.results}
       fetchMovies={fetchMovies}
     />)
     expect(fetchMovies).toHaveBeenCalledWith(criterion, query);

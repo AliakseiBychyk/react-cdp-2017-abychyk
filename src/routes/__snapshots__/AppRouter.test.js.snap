@@ -2,23 +2,6 @@
 
 exports[`should render AppRouter correctly 1`] = `
 <BrowserRouter>
-  <Switch>
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/"
-    />
-    <Route
-      component={[Function]}
-      path="/search/:searchQuery"
-    />
-    <Route
-      component={[Function]}
-      path="/movie/:show_title"
-    />
-    <Route
-      component={[Function]}
-    />
-  </Switch>
+  <App />
 </BrowserRouter>
 `;
