@@ -59,7 +59,7 @@ class SearchHeader extends Component {
               <Button
                 onClick={this.setCriterion}
                 bsStyle={(this.state.criterion === 'person') ? 'primary' : 'default'}
-              >DIRECTOR</Button>          
+              >PERSON</Button>          
                 
               <Button
                 type="submit"
