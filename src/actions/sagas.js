@@ -4,7 +4,6 @@ import { all, call, put, takeEvery } from 'redux-saga/effects'
 import { receiveMovies, FETCH_MOVIES } from './movies'
 
 const fetchMoviesJson = (criterion, query) => { 
-  console.log('in fetchMovieJson, criterion:', criterion, 'query', query)
   const url = `https://api.themoviedb.org/3/search/${criterion}?api_key=${api_key}&query=${query}&include_adult=true`   
 
   return fetch(url, {
@@ -18,9 +17,7 @@ const fetchMoviesJson = (criterion, query) => {
     .catch(console.error)
 }
 
-
 function* fetchMovies(action) {
-  console.log('criterion', action.criterion, 'query', action.query) 
   const movies = yield call(fetchMoviesJson, action.criterion, action.query)
   yield put(receiveMovies(movies))
 }
