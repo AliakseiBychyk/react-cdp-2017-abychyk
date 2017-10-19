@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import SearchHeader from '../SearchHeader/SearchHeader'
 import MovieList from '../MovieList/MovieList'
 import styles from './SearchResultPage.css'
-import {fetchMovies} from '../../actions/movies'
+import { fetchMovies } from '../../actions/movies'
 
 class SearchResultPage extends Component {
   static fetchData(store, criterion, query) {

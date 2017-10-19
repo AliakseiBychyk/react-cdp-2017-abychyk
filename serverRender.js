@@ -16,13 +16,15 @@ const serverRender = (req, res) => {
 
   const promises = branch.map(({route, match}) => {
 
-    const criterion = !!match.params.searchQuery 
+    let criterion = !!match.params.searchQuery 
       ? match.params.searchQuery.split('?').pop().split('=').pop()
-      : 'movie'   
+      : 'movie'
+    criterion = decodeURIComponent(criterion)  
     
-    const query = !!match.params.searchQuery
+    let query = !!match.params.searchQuery
       ? match.params.searchQuery.split('?').shift()
       : match.params.title
+    query = decodeURIComponent(query)
 
     const fetchData = route.component.fetchData
 
