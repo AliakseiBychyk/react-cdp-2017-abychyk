@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import MovieItem from '../MovieItem/MovieItem'
 import MovieList from '../MovieList/MovieList'
 import styles from './MovieDetailPage.css'
-import { fetchMovies } from '../../actions/sagas'
+import { fetchMovies } from '../../actions/movies'
 
 class MovieDetailPage extends Component {
   static fetchData(store, criterion, query) {

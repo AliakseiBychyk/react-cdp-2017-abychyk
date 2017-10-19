@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import moviesReducer from '../reducers/movies'
 import queryReducer from '../reducers/query'
-import { rootSaga } from '../actions/movies'
+import rootSaga from '../actions/sagas'
  
 const composeEnhancers = typeof window === 'object'
   ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__

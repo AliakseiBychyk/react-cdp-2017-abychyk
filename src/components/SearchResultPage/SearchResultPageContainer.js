@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { setSearchCriterion, setSearchQuery } from '../../actions/query'
-import { fetchMovies } from '../../actions/sagas'
+import { fetchMovies } from '../../actions/movies'
 import SearchResultPage from './SearchResultPage'
 import 'url-search-params-polyfill'
 

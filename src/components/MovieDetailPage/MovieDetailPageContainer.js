@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchMovies } from '../../actions/sagas'
+import { fetchMovies } from '../../actions/movies'
 import MovieDetailPage from './MovieDetailPage'
 
 const mapStateToProps = (state, props) => {
