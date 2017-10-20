@@ -2,6 +2,9 @@
 
 ## _The app was refactored to work with Themoviedb API - since Netflix API is unavailable_ 
 
+
+## The application is deployed on https://react-cdp-2017-abychyk.herokuapp.com/
+
 ### server listening on http://localhost:8060 ###
 
 
