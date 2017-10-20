@@ -7,47 +7,31 @@ import configureStore from './src/store/configureStore'
 import App from './src/routes/App'
 import HomePage from './src/components/HomePage/HomePage'
 import routes from './src/routes/routes'
-
+import rootSaga from './src/actions/sagas'
 
 const serverRender = (req, res) => {
-  const store = configureStore() 
+  const store = configureStore()
+  const context = {} 
 
-  const branch = matchRoutes(routes, req.url) 
+  const rootComponent = (
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        {renderRoutes(routes)}
+      </StaticRouter>
+    </Provider>
+  );
 
-  const promises = branch.map(({route, match}) => {
-
-    let criterion = !!match.params.searchQuery 
-      ? match.params.searchQuery.split('?').pop().split('=').pop()
-      : 'movie'
-    criterion = decodeURIComponent(criterion)  
-    
-    let query = !!match.params.searchQuery
-      ? match.params.searchQuery.split('?').shift()
-      : match.params.title
-    query = decodeURIComponent(query)
-
-    const fetchData = route.component.fetchData
-
-    return fetchData instanceof Function 
-      ? fetchData(store, criterion, query)
-      : Promise.resolve(null)
-  })
-  
-  return Promise.all(promises).then(() => {
-    const context = {}
-    const initialMarkup = renderToString(
-      <Provider store={store}>
-        <StaticRouter
-          location={req.url}
-          context={context}
-        >
-          {renderRoutes(routes)}
-        </StaticRouter>
-      </Provider>
-    )
+  store.runSaga(rootSaga).done.then(() => {
+    const initialMarkup = renderToString(rootComponent)
     const initialData = store.getState()  
     res.render('index', {initialMarkup, initialData})
   })
+
+  // Do first render, starts initial actions.
+  renderToString(rootComponent)
+
+  // When the first render is finished, send the END action to redux-saga.
+  store.close()
 }
 
 export default serverRender

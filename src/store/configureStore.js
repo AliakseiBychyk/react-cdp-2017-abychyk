@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
-import createSagaMiddleware from 'redux-saga'
+import createSagaMiddleware, {END} from 'redux-saga'
 import moviesReducer from '../reducers/movies'
 import queryReducer from '../reducers/query'
 import rootSaga from '../actions/sagas'
@@ -21,6 +21,8 @@ export default (preloadedState = '') => {
       applyMiddleware(sagaMiddleware)
     )
   )
+  store.runSaga = sagaMiddleware.run;
+  store.close = () => store.dispatch(END);
   sagaMiddleware.run(rootSaga)
 
   return store
