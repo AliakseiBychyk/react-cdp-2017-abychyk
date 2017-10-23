@@ -19,7 +19,7 @@ const serverRender = (req, res) => {
         {renderRoutes(routes)}
       </StaticRouter>
     </Provider>
-  );
+  )
 
   store.runSaga(rootSaga).done.then(() => {
     const initialMarkup = renderToString(rootComponent)

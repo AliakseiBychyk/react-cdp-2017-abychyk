@@ -6,10 +6,6 @@ import styles from './MovieDetailPage.css'
 import { fetchMovies } from '../../actions/movies'
 
 class MovieDetailPage extends Component {
-  static fetchData(store, criterion, query) {
-    return store.dispatch(fetchMovies(criterion, query))
-  }
-
   componentWillMount() {
     if (this.props.movies.length === 0) {
       this.props.fetchMovies('movie', this.props.title)
@@ -32,7 +28,7 @@ class MovieDetailPage extends Component {
 }
 
 MovieDetailPage.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.arrayOf(PropTypes.object),
   movie: PropTypes.object,
   fetchMovies: PropTypes.func,
 }
