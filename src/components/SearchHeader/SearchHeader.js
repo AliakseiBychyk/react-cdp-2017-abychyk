@@ -30,8 +30,8 @@ class SearchHeader extends Component {
     this.setState({ query: event.target.value })
   }
 
-  submitForm = (e) => {
-    e.preventDefault()
+  submitForm = (event) => {
+    event.preventDefault()
     this.props.redirectTo(`/search/${this.state.query}?criterion=${this.state.criterion}`) 
   }
   

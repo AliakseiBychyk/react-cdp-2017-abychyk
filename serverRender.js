@@ -2,10 +2,8 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { StaticRouter } from 'react-router-dom'
-import { matchRoutes, renderRoutes } from 'react-router-config'
+import { renderRoutes } from 'react-router-config'
 import configureStore from './src/store/configureStore'
-import App from './src/routes/App'
-import HomePage from './src/components/HomePage/HomePage'
 import routes from './src/routes/routes'
 import rootSaga from './src/actions/sagas'
 
@@ -27,10 +25,8 @@ const serverRender = (req, res) => {
     res.render('index', {initialMarkup, initialData})
   })
 
-  // Do first render, starts initial actions.
   renderToString(rootComponent)
 
-  // When the first render is finished, send the END action to redux-saga.
   store.close()
 }
 

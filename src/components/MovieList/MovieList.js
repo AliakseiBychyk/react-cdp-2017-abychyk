@@ -4,9 +4,6 @@ import MoviePreview from '../MoviePreview/MoviePreview'
 import styles from './MovieList.css'
 
 class MovieList extends Component {
-  state = {
-    movies: this.props.movies
-  }
 
   render() {
     return (

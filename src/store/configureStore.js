@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
-import createSagaMiddleware, {END} from 'redux-saga'
+import createSagaMiddleware, { END } from 'redux-saga'
 import moviesReducer from '../reducers/movies'
 import queryReducer from '../reducers/query'
 import rootSaga from '../actions/sagas'
