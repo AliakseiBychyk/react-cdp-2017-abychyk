@@ -17,3 +17,9 @@
   position: relative;
   left: 20%;
 }
+
+.linkedInput {
+  display: inline-block;
+  width: 500px;
+  height: 35px;
+}

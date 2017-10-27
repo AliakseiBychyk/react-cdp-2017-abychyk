@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
+import LinkedStateMixin from 'react-addons-linked-state-mixin'
+import LinkedInput from 'react-linked-input'
+import ReactMixin from 'react-mixin'
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 import styles from './SearchHeader.css'
 
@@ -26,9 +29,9 @@ class SearchHeader extends Component {
     this.setState({ criterion })
   }
 
-  setInputValue = (event) => {
-    this.setState({ query: event.target.value })
-  }
+  // setInputValue = (event) => {
+  //   this.setState({ query: event.target.value })
+  // }
 
   submitForm = (event) => {
     event.preventDefault()
@@ -41,13 +44,15 @@ class SearchHeader extends Component {
       <div className={styles.searchHeader}>
         <Form onSubmit={this.submitForm} >       
             <ControlLabel>FIND YOUR MOVIE</ControlLabel>
-            <FormControl
-              type="text"
-              name="title"
-              placeholder="Quentin Tarantino"
-              defaultValue={this.state.query}
-              onChange={this.setInputValue}
-            />
+            <div>           
+              <LinkedInput // <FormControl
+                className={styles.linkedInput}
+                type="text"
+                valueLink={this.linkState('query')}
+                // placeholder="Quentin Tarantino"
+                // onChange={this.setInputValue}
+              />
+            </div>
             <div className={styles.searchByButtons}>
               <ControlLabel>SEARCH BY</ControlLabel>
               
@@ -76,5 +81,7 @@ SearchHeader.propTypes = {
   criterion: PropTypes.string,
   redirectTo: PropTypes.func
 }
+
+ReactMixin(SearchHeader.prototype, LinkedStateMixin)
 
 export default SearchHeader
